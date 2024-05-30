@@ -4,7 +4,7 @@
 <html>
 <head>
 
-  <title>Protected Areas Data</title>
+    <title>Protected Areas Data</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
@@ -20,39 +20,52 @@
 </head>
 <body>
 
-  <div id="map" style="height: 800px;"></div>
+    <font size="6" face="georgia" color="green">
+        Protected Areas Data
+    </font>
 
-  <script>
+    <br>
+    <hr>
 
-    // name popup upon clicking point
-    function onEachFeature(feature, layer) {
-        if (feature.properties && feature.properties.name) {
-            layer.bindPopup(feature.properties.name);
-    }}
+    <div id="map" style="height: 800px;"></div>
 
-    var coords = [30,0];
-    var zoomLevel = 2;
-    var map = L.map('map').setView(coords, zoomLevel);
-    var tiles = 'https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png';
-    var markers = L.markerClusterGroup({
-        //turn off default grouping polygons
-        showCoverageOnHover: false
-    });
+    <script>
 
-    L.tileLayer(tiles, {
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        maxZoom: 18
-    }).addTo(map);
+        // name popup upon clicking point
+        function onEachFeature(feature, layer) {
+            if (feature.properties && feature.properties.name) {
+                layer.bindPopup(feature.properties.name);
+        }}
 
-    //pulling from the gh-pages branch version
-    $.getJSON("https://raw.githubusercontent.com/stepps00/Protected-Areas-Data/gh-pages/data/PAD-centroids.geojson", function(data) {
-        L.geoJson(data, {
-            onEachFeature: onEachFeature}).addTo(markers);
-    });
+        var coords = [30,0];
+        var zoomLevel = 2;
+        var map = L.map('map').setView(coords, zoomLevel);
+        var tiles = 'https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png';
+        var markers = L.markerClusterGroup({
+            //turn off default grouping polygons
+            showCoverageOnHover: false
+        });
 
-    map.addLayer(markers);
+        L.tileLayer(tiles, {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            maxZoom: 18
+        }).addTo(map);
 
-  </script>
+        //pulling from the gh-pages branch version
+        $.getJSON("https://raw.githubusercontent.com/stepps00/Protected-Areas-Data/gh-pages/data/PAD-centroids.geojson", function(data) {
+            L.geoJson(data, {
+                onEachFeature: onEachFeature}).addTo(markers);
+        });
+
+        map.addLayer(markers);
+
+    </script>
+
+    <hr>
+
+    <font size="3" face="georgia">
+        This is a work in progress. 
+    </font>
 
 </body>
 </html>
