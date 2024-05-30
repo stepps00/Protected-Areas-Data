@@ -1,0 +1,95 @@
+ <!--stepps00 2024-05-29-->
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <title>Protected Areas Data</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css">
+
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+      integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+      crossorigin=""></script>
+    <script src="htdocs/webmap101/leaflet.ajax.min.js" type="text/javascript" ></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>    
+
+</head>
+<body>
+
+    <font size="6" face="georgia" color="green">
+        Protected Areas Data
+    </font>
+
+    <br>
+    <hr>
+
+    <div id="map" style="height: 600px;"></div>
+
+    <script>
+
+        // name popup upon clicking point
+        function onEachFeature(feature, layer) {
+            if (feature.properties && feature.properties.name) {
+                layer.bindPopup(feature.properties.name);
+        }}
+
+        var coords = [30,0];
+        var zoomLevel = 2;
+        var map = L.map('map').setView(coords, zoomLevel);
+        var tiles = 'https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png';
+        var markers = L.markerClusterGroup({
+            //turn off default grouping polygons
+            showCoverageOnHover: false
+        });
+
+        L.tileLayer(tiles, {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            maxZoom: 18
+        }).addTo(map);
+
+        //pulling from the gh-pages branch version
+        $.getJSON("https://raw.githubusercontent.com/stepps00/Protected-Areas-Data/gh-pages/data/PAD-centroids.geojson", function(data) {
+            L.geoJson(data, {
+                onEachFeature: onEachFeature}).addTo(markers);
+        });
+
+        map.addLayer(markers);
+
+    </script>
+
+    <hr>
+
+    <p><em>This is a work in progress.</em></p>
+
+    <font size="4" face="georgia" color="green">
+        What is Protected Areas Data?
+    </font>
+
+    <p>Protected Areas Data is a series of openly-licensed spatial datasets, representing protected areas around the world. Each protected area is represented by a polygon geometry and a standardized set of properties. As of mid-2024, protected areas in <b>50</b> countries have been catalogued in Protected Areas Data.</p>
+
+    <font size="4" face="georgia" color="green">
+        What is a protected area?
+    </font>
+
+    <p>According to the <a href="https://www.iucn.org/">IUCN</a>, a protected area is defined as “an area of land and/or sea especially dedicated to the protection and maintenance of biological diversity, and of natural and associated cultural resources, and managed through legal or other effective means” (<a href="https://www.iucn.org/resources/publication/protecting-nature-regional-reviews-protected-areas">1</a>, <a href="https://books.google.com/books?hl=en&lr=&id=WZpSj1RSdwgC&oi=fnd&pg=PP11&dq=IUCN+(1994)+Guidelines+for+Protected+Area+Management+Categories.+IUCN,+Gland,+Switzerland,+and+Cambridge,+UK.&ots=ol3I7gnE5f&sig=4nY1TxAThdnWXLNca7mJL8nrvg8#v=onepage&q&f=false">2</a>). Protected Areas Data tries to capture an up-to-date set of these areas around the globe.</p>
+
+    <font size="4" face="georgia" color="green">
+        How can I download the Protected Areas Data dataset(s)?
+    </font>
+
+    <p>Currently, data is available in a shapefile format. Shapefiles are available in each of the Protected Areas Data repositories on GitHub, which are split by country.</p>
+    <p>Protected Areas Data for Chile, for example, can be found here: <a href="https://github.com/stepps00/Protected-Areas-Data-Chile">https://github.com/stepps00/Protected-Areas-Data-Chile</a>.</p>
+    <p>A full list of Protected Areas Data datasets can be found here: <a href="https://github.com/stepps00/Protected-Areas-Data">https://github.com/stepps00/Protected-Areas-Data</a>.</p>
+
+    <font size="4" face="georgia" color="green">
+        What are the Protected Areas Data license terms?
+    </font>
+
+    <p>The datasets are released under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>.</p>
+
+</body>
+</html>
