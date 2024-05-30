@@ -1,5 +1,7 @@
 # Protected-Areas-Data
 
+World Map with current coverage: https://stepps00.github.io/Protected-Areas-Data/
+
 ## What is Protected Areas Data?
 
 Protected Areas Data is a series of openly-licensed spatial datasets, representing protected areas around the world. Each protected area is represented by a polygon geometry and a standardized set of properties. As of mid-2024, protected areas in **50** countries have been catalogued in Protected Areas Data.
@@ -14,11 +16,7 @@ The datasets are released under a [CC BY 4.0](https://creativecommons.org/licens
 
 Please see the `sources` folder in each per-country repository for input sources used to create the datasets.
 
-## Coverage
-
-World Map with current coverage: https://stepps00.github.io/Protected-Areas-Data/
-
-### List of available datasets
+## List of available datasets
 
 - [Afghanistan](https://github.com/stepps00/Protected-Areas-Data-Afghanistan)
 - [Albania](https://github.com/stepps00/Protected-Areas-Data-Albania)
