@@ -4,7 +4,7 @@ World Map with current coverage: https://stepps00.github.io/Protected-Areas-Data
 
 ## What is Protected Areas Data?
 
-Protected Areas Data is a series of openly-licensed spatial datasets, representing protected areas around the world. Each protected area is represented by a polygon geometry and a standardized set of properties. As of mid-2024, protected areas in **50** countries have been catalogued in Protected Areas Data.
+Protected Areas Data is a series of openly-licensed spatial datasets, representing protected areas around the world. Each protected area is represented by a polygon geometry and a standardized set of properties. As of February 2026, protected areas in **56** countries have been catalogued.
 
 ## What is a protected area?
 
@@ -30,6 +30,7 @@ Please see the `sources` folder in each per-country repository for input sources
 - [Bhutan](https://github.com/stepps00/Protected-Areas-Data-Bhutan)
 - [Bosnia and Herzegovina](https://github.com/stepps00/Protected-Areas-Data-Bosnia-and-Herzegovina)
 - [Bulgaria](https://github.com/stepps00/Protected-Areas-Data-Bulgaria)
+- [Cambodia](https://github.com/stepps00/Protected-Areas-Data-Cambodia)
 - [Chile](https://github.com/stepps00/Protected-Areas-Data-Chile)
 - [Croatia](https://github.com/stepps00/Protected-Areas-Data-Croatia)
 - [Cyprus](https://github.com/stepps00/Protected-Areas-Data-Cyprus)
@@ -51,6 +52,7 @@ Please see the `sources` folder in each per-country repository for input sources
 - [Lithuania](https://github.com/stepps00/Protected-Areas-Data-Lithuania)
 - [Luxembourg](https://github.com/stepps00/Protected-Areas-Data-Luxembourg)
 - [Malta](https://github.com/stepps00/Protected-Areas-Data-Malta)
+- [Mexico](https://github.com/stepps00/Protected-Areas-Data-Mexico)
 - [Montenegro](https://github.com/stepps00/Protected-Areas-Data-Montenegro)
 - [Nepal](https://github.com/stepps00/Protected-Areas-Data-Nepal)
 - [Netherlands](https://github.com/stepps00/Protected-Areas-Data-Netherlands)
@@ -59,6 +61,7 @@ Please see the `sources` folder in each per-country repository for input sources
 - [Norway](https://github.com/stepps00/Protected-Areas-Data-Norway)
 - [Poland](https://github.com/stepps00/Protected-Areas-Data-Poland)
 - [Portugal](https://github.com/stepps00/Protected-Areas-Data-Portugal)
+- [Qatar](https://github.com/stepps00/Protected-Areas-Data-Qatar)
 - [Romania](https://github.com/stepps00/Protected-Areas-Data-Romania)
 - [Serbia](https://github.com/stepps00/Protected-Areas-Data-Serbia)
 - [Slovakia](https://github.com/stepps00/Protected-Areas-Data-Slovakia)
