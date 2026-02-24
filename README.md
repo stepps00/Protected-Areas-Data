@@ -4,7 +4,7 @@ World Map with current coverage: https://stepps00.github.io/Protected-Areas-Data
 
 ## What is Protected Areas Data?
 
-Protected Areas Data is a series of openly-licensed spatial datasets, representing protected areas around the world. Each protected area is represented by a polygon geometry and a standardized set of properties. As of February 2026, protected areas in **56** countries have been catalogued.
+Protected Areas Data is a series of openly-licensed spatial datasets, representing protected areas around the world. Each protected area is represented by a polygon geometry and a standardized set of properties. As of February 2026, protected areas in **53** countries have been catalogued.
 
 ## What is a protected area?
 
